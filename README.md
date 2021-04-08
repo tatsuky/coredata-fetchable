@@ -13,7 +13,7 @@ public final class Person: NSManagedObject, CoreDataFetchable {
 
 Note here that `final` keyword is added to the declaration.
 
-## Creating and insert to context
+## Creating and inserting to context
 
 ```swift
 let person = Person.create()
@@ -44,6 +44,6 @@ Person.deleteAll() // I want everyone gone.
 
 ## Caveats
 
-Do not forget to save context when the application will terminate.
+Do not forget to call `context.save()` when the application will terminate.
 
 I didn't implement e.g. `person.save()` because it may have a performance issue given you would call `context.save()` every time an instance is created.
